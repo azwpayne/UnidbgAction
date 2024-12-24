@@ -8,13 +8,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 class AndroidEmulatorBaseTest {
+
+  private static final Logger log = LoggerFactory.getLogger(AndroidEmulatorBaseTest.class);
 
   private AndroidEmulatorBase aeb;
 
@@ -23,7 +25,7 @@ class AndroidEmulatorBaseTest {
     AndroidEmulatorModel aem = new AndroidEmulatorModel();
     aem.setAppProcessName("com.anjuke.android.app");
     aem.setCpuInstructionType(false);
-    aem.setLibELF("src/test/resources/lib/armeabi-v7a/libsignutil.so");
+    aem.setLibElf("src/test/resources/lib/armeabi-v7a/libsignutil.so");
     aem.setTargetClassPath("com/anjuke/mobile/sign/SignUtil");
 
     aem.setBackendFactories(

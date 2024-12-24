@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("io.freefair.lombok") version ("8.+")
+    id("io.freefair.lombok") version ("8.11")
 }
 
 group = "com.azwpayne"
@@ -12,8 +12,8 @@ repositories {
 
 dependencies {
     // unidbg
-    implementation("com.github.zhkl0228:unidbg-android:0.9.8")
-    implementation("com.github.zhkl0228:unidbg-api:0.9.8")
+    implementation("com.github.zhkl0228:unidbg-android:0.+")
+    implementation("com.github.zhkl0228:unidbg-api:0.+")
 
     // unidbg backend
     implementation("com.github.zhkl0228:unidbg-dynarmic:0.9.8")
@@ -26,6 +26,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("org.slf4j:slf4j-api:2.0.16")
     implementation("org.slf4j:slf4j-reload4j:2.0.16")
+
 }
 
 tasks.test {

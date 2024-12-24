@@ -4,101 +4,71 @@ package com.azwpayne.emulator;
 import com.github.unidbg.arm.backend.BackendFactory;
 import java.io.File;
 import java.util.Collection;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author <a href="https://github.com/azwpayne">azpayne</a>
  */
 public class AndroidEmulatorModel {
 
-  private boolean CPUInstructionType;
-  private String AppProcessName;
-  private String AppRootDir;
+  @Setter
+  private boolean cpuInstructionType;
+
+  @Getter
+  @Setter
+  private String appProcessName;
+
+  @Setter
+  @Getter
+  private String appRootDir;
+
+  @Getter
   private Collection<BackendFactory> backendFactories;
-  private int LibResolverSDK;
-  private boolean JNIDebug;
-  private File LibELF;
-  private boolean ActiveInit;
-  private String TargetClassPath;
+
+  @Setter
+  private int libResolverSdk;
+
+  @Setter
+  @Getter
+  private boolean jniDebug;
+
+  @Getter
+  private File libElf;
+
+  @Setter
+  @Getter
+  private boolean activeInit;
+
+  @Getter
+  private String targetClassPath;
 
 
-  boolean isCPUInstructionType() {
-    return !CPUInstructionType;
-  }
-
-  public void setCPUInstructionType(boolean CPUInstructionType) {
-    this.CPUInstructionType = CPUInstructionType;
-  }
-
-  public String getAppProcessName() {
-    return AppProcessName;
-  }
-
-  public void setAppProcessName(String appProcessName) {
-    this.AppProcessName = appProcessName;
-  }
-
-
-  public String getAppRootDir() {
-    return AppRootDir;
-  }
-
-  public void setAppRootDir(String appRootDir) {
-    this.AppRootDir = appRootDir;
+  boolean isCpuInstructionType() {
+    return !cpuInstructionType;
   }
 
 
-  public int getLibResolverSDK() {
-    if (this.LibResolverSDK != 18 && this.LibResolverSDK != 23) {
+  public int getLibResolverSdk() {
+    if (this.libResolverSdk != 18 && this.libResolverSdk != 23) {
       return 23;
     }
-    return this.LibResolverSDK;
+    return this.libResolverSdk;
   }
 
-  public void setLibResolverSDK(final int libResolverSDK) {
-    this.LibResolverSDK = libResolverSDK;
-  }
-
-  public boolean isJNIDebug() {
-    return JNIDebug;
-  }
-
-  public void setJNIDebug(boolean JNIDebug) {
-    this.JNIDebug = JNIDebug;
-  }
-
-  public File getLibELF() {
-    return LibELF;
-  }
-
-  public void setLibELF(String libELF) {
-    File libfile = new File(libELF);
+  public void setLibElf(String libElf) {
+    File libfile = new File(libElf);
     if (!libfile.exists()) {
-      throw new IllegalArgumentException("libELF=" + libELF + " not found");
+      throw new IllegalArgumentException("libElf=" + this.libElf + " not found");
     }
-    this.LibELF = libfile;
-  }
-
-  public boolean isActiveInit() {
-    return ActiveInit;
-  }
-
-  public void setActiveInit(boolean activeInit) {
-    this.ActiveInit = activeInit;
-  }
-
-  public String getTargetClassPath() {
-    return TargetClassPath;
+    this.libElf = libfile;
   }
 
   public void setTargetClassPath(String targetClassPath) {
     if (targetClassPath == null || targetClassPath.isEmpty()) {
       throw new IllegalArgumentException("targetClassPath == null");
     }
-    this.TargetClassPath = targetClassPath;
-  }
-
-  public Collection<BackendFactory> getBackendFactories() {
-    return backendFactories;
+    this.targetClassPath = targetClassPath;
   }
 
   public void setBackendFactories(Collection<BackendFactory> backendFactories) {
@@ -107,4 +77,5 @@ public class AndroidEmulatorModel {
     }
 
   }
+
 }

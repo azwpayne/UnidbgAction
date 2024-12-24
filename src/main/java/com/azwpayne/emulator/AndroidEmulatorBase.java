@@ -43,16 +43,16 @@ public class AndroidEmulatorBase {
     emulator = aeb.build();
 
     memory = emulator.getMemory();
-    memory.setLibraryResolver(new AndroidResolver(args.getLibResolverSDK()));
+    memory.setLibraryResolver(new AndroidResolver(args.getLibResolverSdk()));
 
     vm = emulator.createDalvikVM();
     vm.setDvmClassFactory(new ProxyClassFactory());
 
-    vm.setVerbose(args.isJNIDebug());
+    vm.setVerbose(args.isJniDebug());
 
     dvmClass = vm.resolveClass(args.getTargetClassPath());
 
-    dm = vm.loadLibrary(args.getLibELF(), args.isActiveInit());
+    dm = vm.loadLibrary(args.getLibElf(), args.isActiveInit());
     dm.callJNI_OnLoad(emulator);
   }
 
