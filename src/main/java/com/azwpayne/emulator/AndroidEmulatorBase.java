@@ -23,7 +23,7 @@ public class AndroidEmulatorBase {
 
   public AndroidEmulatorBase(final AndroidEmulatorModel args) {
 
-    AndroidEmulatorBuilder aeb = args.isCPUInstructionType() ? AndroidEmulatorBuilder.for32Bit()
+    AndroidEmulatorBuilder aeb = args.isCpuInstructionType() ? AndroidEmulatorBuilder.for32Bit()
         : AndroidEmulatorBuilder.for64Bit();
 
     if (args.getAppProcessName() != null && !args.getAppProcessName().isEmpty()) {

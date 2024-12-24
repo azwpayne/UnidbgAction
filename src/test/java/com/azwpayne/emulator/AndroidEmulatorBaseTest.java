@@ -22,7 +22,7 @@ class AndroidEmulatorBaseTest {
   void setUp() {
     AndroidEmulatorModel aem = new AndroidEmulatorModel();
     aem.setAppProcessName("com.anjuke.android.app");
-    aem.setCPUInstructionType(false);
+    aem.setCpuInstructionType(false);
     aem.setLibELF("src/test/resources/lib/armeabi-v7a/libsignutil.so");
     aem.setTargetClassPath("com/anjuke/mobile/sign/SignUtil");
 
