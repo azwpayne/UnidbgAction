@@ -10,10 +10,12 @@ repositories {
     mavenCentral()
 }
 
+ext["commons-io.version"] = "2.14.0"
+
 dependencies {
     // unidbg
-    implementation("com.github.zhkl0228:unidbg-android:0.+")
-    implementation("com.github.zhkl0228:unidbg-api:0.+")
+    implementation("com.github.zhkl0228:unidbg-android:0.9.8")
+    implementation("com.github.zhkl0228:unidbg-api:0.9.8")
 
     // unidbg backend
     implementation("com.github.zhkl0228:unidbg-dynarmic:0.9.8")
