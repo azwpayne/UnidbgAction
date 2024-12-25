@@ -5,6 +5,6 @@ of [zhkl0228/unidbg](https://github.com/zhkl0228/unidbg), used to help developer
 easily.
 
 - [ ] Unidbg documentation supplement
-- [ ] Encapsulate the creation of android emulator
-- [x] Integrate Spring to facilitate API service implementation
+- [x] Encapsulate the creation of android emulator
+- [ ] Integrate Spring to facilitate API service implementation
 - [ ] ...
