@@ -1,5 +1,8 @@
 plugins {
     id("java")
+
+    // please see https://plugins.gradle.org/plugin/io.freefair.lombok, when
+    // you want get new lombok version,
     id("io.freefair.lombok") version ("8.11")
 }
 
@@ -10,11 +13,10 @@ repositories {
     mavenCentral()
 }
 
-ext["commons-io.version"] = "2.14.0"
-
 dependencies {
     // unidbg
     implementation("com.github.zhkl0228:unidbg-android:0.9.8")
+    implementation(platform("commons-io:commons-io:+"))
     implementation("com.github.zhkl0228:unidbg-api:0.9.8")
 
     // unidbg backend
