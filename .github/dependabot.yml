@@ -7,7 +7,7 @@ updates:
       timezone: Asia/Shanghai
     open-pull-requests-limit: 10
     rebase-strategy: disabled
-  - package-ecosystem: npm
+  - package-ecosystem: gradle
     directory: "/"
     schedule:
       interval: daily
